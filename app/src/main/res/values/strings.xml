@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Sync Playground</string>
+    <string name="playground">PLAYGROUND</string>
+    <string name="start">Initial Sync</string>
+    <string name="delta">Delta Sync</string>
+</resources>

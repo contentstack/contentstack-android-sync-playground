@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="20dp"
+            tools:context=".PlaygroundActivity">
+
+                <TextView
+                    android:id="@+id/tvMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tvStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_horizontal"
+                    android:fontFamily="sans-serif"
+                    android:textStyle="bold"
+                    android:padding="10dp"
+                    android:textSize="15sp" />
+
+
+                <LinearLayout
+                    android:id="@+id/button_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnInitiate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="#DE4A48"
+                            android:textColor="#FFFFFF"
+                            android:onClick="onInitialClick"
+                            android:text="@string/start"
+                            android:textSize="15sp" />
+
+                        <Button
+                            android:id="@+id/btnDelta"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="4sp"
+                            android:background="#DE4A48"
+                            android:textColor="#FFFFFF"
+                            android:onClick="onDeltaClick"
+                            android:text="@string/delta"
+                            android:textSize="15sp" />
+
+                </LinearLayout>
+
+        </RelativeLayout>
+</layout>
