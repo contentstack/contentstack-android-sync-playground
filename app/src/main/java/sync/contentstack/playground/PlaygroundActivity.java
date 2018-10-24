@@ -38,7 +38,7 @@ public class PlaygroundActivity extends AppCompatActivity {
     /* It initialise very first time for full sync of the data in the application from the stack */
     @SuppressLint("SetTextI18n")
     private void initiateSync(){
-        new Handler().postDelayed(() -> stack.syncInit(new SyncResultCallBack() {
+        new Handler().postDelayed(() -> stack.sync(new SyncResultCallBack() {
             @Override
             public void onCompletion(SyncStack syncStack, Error error) {
                 if (error == null){
@@ -62,7 +62,7 @@ public class PlaygroundActivity extends AppCompatActivity {
      * This request is made to get updated data from the stack
      */
     private void deltaRequestWithSyncToken(){
-        new Handler().postDelayed(() -> stack.syncWithSyncToken(syncToken, new SyncResultCallBack() {
+        new Handler().postDelayed(() -> stack.syncToken(syncToken, new SyncResultCallBack() {
             @SuppressLint("SetTextI18n")
             @Override
             public void onCompletion(SyncStack syncStack, Error error) {
