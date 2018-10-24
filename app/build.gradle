@@ -14,7 +14,7 @@ android {
     buildTypes {
 
         debug {
-            buildConfigField("String", "STACK_URL", "\"dev-cdn.contentstack.io\"")
+            buildConfigField("String", "STACK_URL", "\"stag-cdn.contentstack.io\"")
             buildConfigField("String", "API_KEY", "\"***REMOVED***\"")
             buildConfigField("String", "ACCESS_TOKEN", "\"***REMOVED***\"")
             buildConfigField("String", "DELIVERY_TOKEN", "\"***REMOVED***\"")
@@ -27,13 +27,6 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            buildConfigField("String", "STACK_URL", "\"dev-cdn.contentstack.io\"")
-            buildConfigField("String", "API_KEY", "\"***REMOVED***\"")
-            buildConfigField("String", "ACCESS_TOKEN", "\"***REMOVED***\"")
-            buildConfigField("String", "DELIVERY_TOKEN", "\"***REMOVED***\"")
-            buildConfigField("String", "ENVIRONMENT", "\"web\"")
-            buildConfigField("String", "PLAYGROUND_SYNC_TOKEN", "\"activity_playground\"")
-            buildConfigField("String", "SYNC_TOKEN_KEY", "\"token\"")
         }
     }
 
