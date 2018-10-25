@@ -9,4 +9,4 @@
 /build
 /captures
 .externalNativeBuild
-/.app/built.gradle/android/buildTypes/debug
+.app/built.gradle/android/buildTypes/debug.buildConfigField
