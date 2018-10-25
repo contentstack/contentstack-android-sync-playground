@@ -68,7 +68,7 @@ stack.sync(new SyncResultCallBack() {
    
    Screenshot
    
-   <img src="https://github.com/contentstack/contentstack-android-sync-playground/blob/master/app/src/main/assets/screenshot/initial.png"  height="600" width="300">
+   <img src="https://github.com/contentstack/contentstack-android-sync-playground/blob/master/app/src/main/assets/screenshot/initial.png"  height="500" width="300">
    
    ### Step 8: Use pagination token
    If the result of the initial sync contains more than 100 records, the response would be paginated. In that case, it returns a pagination token. While the SDK continues to automatically fetch the next batch of data using the pagination token, it comes in handy in case the sync process is interrupted midway (due to network issues, etc.). You can use it to reinitiate sync from where it was interrupted.
@@ -107,7 +107,7 @@ stack.sync(new SyncResultCallBack() {
 
 Screenshot
    
-   <img src="https://github.com/contentstack/contentstack-android-sync-playground/blob/master/app/src/main/assets/screenshot/initial.png"  height="600" width="300">
+   <img src="https://github.com/contentstack/contentstack-android-sync-playground/blob/master/app/src/main/assets/screenshot/subsquesnt.png"  height="500" width="300">
 
 This is a simple playground app that helps you understand how the Sync API works with the Android SDK. To learn how to persist data in order to create offline apps, refer to the [Android demo app built using the Persistence Library](https://github.com/contentstack/contentstack-android-persistence-example
 ).
