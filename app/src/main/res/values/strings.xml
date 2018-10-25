@@ -3,4 +3,5 @@
     <string name="playground">PLAYGROUND</string>
     <string name="start">Initial Sync</string>
     <string name="delta">Delta Sync</string>
+    <string name="title_activity_main">MainActivity</string>
 </resources>

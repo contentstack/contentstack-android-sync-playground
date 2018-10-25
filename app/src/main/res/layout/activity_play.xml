@@ -7,14 +7,15 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:padding="20dp"
+            android:layout_marginTop="50dp"
             tools:context=".PlaygroundActivity">
 
                 <TextView
-                    android:id="@+id/tvMessage"
+                    android:id="@+id/messageString"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:textSize="15sp" />
+                    android:fontFamily="sans-serif"/>
+
 
                 <TextView
                     android:id="@+id/tvStatus"
@@ -28,37 +29,19 @@
                     android:textSize="15sp" />
 
 
-                <LinearLayout
-                    android:id="@+id/button_layout"
-                    android:layout_width="match_parent"
+                <Button
+                    android:id="@+id/btnInitiate"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="#DE4A48"
+                    android:onClick="onInitialClick"
                     android:layout_alignParentBottom="true"
-                    android:orientation="horizontal">
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/start"
+                    android:textColor="#FFFFFF"
+                    android:padding="@dimen/fab_margin"
+                    android:textSize="15sp" />
 
-                        <Button
-                            android:id="@+id/btnInitiate"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="#DE4A48"
-                            android:textColor="#FFFFFF"
-                            android:onClick="onInitialClick"
-                            android:text="@string/start"
-                            android:textSize="15sp" />
-
-                        <Button
-                            android:id="@+id/btnDelta"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_marginStart="4sp"
-                            android:background="#DE4A48"
-                            android:textColor="#FFFFFF"
-                            android:onClick="onDeltaClick"
-                            android:text="@string/delta"
-                            android:textSize="15sp" />
-
-                </LinearLayout>
 
         </RelativeLayout>
 </layout>
