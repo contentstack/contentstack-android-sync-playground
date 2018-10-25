@@ -45,7 +45,7 @@ Now add your Contentstack API Key, Delivery Token, and Environment to the projec
 ```
 Config config = new Config();
 config.setHost(BuildConfig.STACK_URL);
-Stack stack = Contentstack.stack(getApplicationContext(), “api_key”, “delivery_token”, “environment”, config); 
+Stack stack = Contentstack.stack(context, “api_key”, “delivery_token”, “environment”, config); 
 ```
 
 This will initiate your project.
