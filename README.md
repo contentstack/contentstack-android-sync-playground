@@ -28,8 +28,10 @@ For quick integration, we have already created the content type. [Download the c
 ) and [import](https://www.contentstack.com/docs/guide/content-types#importing-a-content-type) it to your stack. (If needed, you can [create your own content types](https://www.contentstack.com/docs/guide/content-types#creating-a-content-type). Read more about Content Types.)
 
 Now that all the content types are ready, let’s add some content for your sync playground app.
+
 ### Step 4: Adding content
-[Create](https://www.contentstack.com/docs/guide/content-management#add-a-new-entry) and [publish](https://www.contentstack.com/docs/guide/content-management#publish-an-entry) entries for the ‘Session’ content type.
+[Create](https://www.contentstack.com/docs/guide/content-management#add-a-new-entry) and [publish](https://www.contentstack.com/docs/guide/content-management#publish-an-entry) entries for the ‘Session’ content type
+
 Now that we have created the sample data, it’s time to use and configure the presentation layer.
 
 ### Step 5: Set up and initialize Android SDK
@@ -43,9 +45,7 @@ $ git clone [https://github.com/contentstack/contentstack-android-sync-playgroun
 Now add your Contentstack API Key, Delivery Token, and Environment to the project during the SDK initialization step. (Find your [Stack's API Key and Delivery Token](https://www.contentstack.com/docs/apis/content-delivery-api/#authentication).)
 
 ```
-Config config = new Config();
-config.setHost(BuildConfig.STACK_URL);
-Stack stack = Contentstack.stack(context, “api_key”, “delivery_token”, “environment”, config); 
+Stack stack = Contentstack.stack(context, “api_key”, “delivery_token”, “environment”); 
 ```
 
 This will initiate your project.
@@ -70,8 +70,9 @@ stack.sync(new SyncResultCallBack() {
    
    <img src="https://github.com/contentstack/contentstack-android-sync-playground/blob/master/app/src/main/assets/screenshot/initial.png"  height="500" width="300">
    
-   ### Step 8: Use pagination token
-   If the result of the initial sync contains more than 100 records, the response would be paginated. In that case, it returns a pagination token. While the SDK continues to automatically fetch the next batch of data using the pagination token, it comes in handy in case the sync process is interrupted midway (due to network issues, etc.). You can use it to reinitiate sync from where it was interrupted.
+### Step 8: Use pagination token
+   
+If the result of the initial sync contains more than 100 records, the response would be paginated. In that case, it returns a pagination token. While the SDK continues to automatically fetch the next batch of data using the pagination token, it comes in handy in case the sync process is interrupted midway (due to network issues, etc.). You can use it to reinitiate sync from where it was interrupted.
    
    ```
    // Call this function when initial sync is interrupted while 
