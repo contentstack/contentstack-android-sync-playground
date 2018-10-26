@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     // Stack instance
     private Stack stack;
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -110,21 +110,15 @@ public class MainActivity extends AppCompatActivity {
 
     private void showData(SyncStack syncStack){
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-
-                int itemSize = syncStack.getCount();
-                String syncToken = syncStack.getSyncToken();
-                String message = null;
-                if (syncToken!=null){
-                    message = "Item count: "+itemSize+"\n"+"Next Sync Token: "+syncToken;
-                    binding.container.messageString.setText(message);
-                    BaseApp.storeSyncToken(syncToken);
-                }
-                binding.container.tvStatus.setText("SYNC Completed");
-            }
-        }, WAIT_FOR_SECONDS);
+        int itemSize = syncStack.getCount();
+        String syncToken = syncStack.getSyncToken();
+        String message = null;
+        if (syncToken!=null){
+            message = "Item count: "+itemSize+"\n"+"Next Sync Token: "+syncToken;
+            binding.container.messageString.setText(message);
+            BaseApp.storeSyncToken(syncToken);
+        }
+        binding.container.tvStatus.setText("SYNC Completed");
     }
 
 
