@@ -7,9 +7,9 @@ Note that this app does not store data on the device’s local storage. To creat
 Perform the steps given below to use this app.
 
 ### Prerequisites
-* Android Studio 
-* Contentstack account
-* Basic knowledge of Contentstack
+* [Android Studio](https://developer.android.com/studio/)
+* [Contentstack account](https://app.contentstack.com/#!/login)
+* [Basic knowledge of Contentstack](https://www.contentstack.com/docs/)
 
 In this tutorial, we will first go through the steps involved in configuring Contentstack and then look at the steps required to customize and use the presentation layer.
 
