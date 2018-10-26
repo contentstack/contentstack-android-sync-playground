@@ -59,8 +59,11 @@ stack.sync(new SyncResultCallBack() {
    public void onCompletion(SyncStack syncStack, Error error) {
        if (error == null) {
            // Success block
+               int itemSize = syncStack.getCount();
+               String syncToken = syncStack.getSyncToken();
        }else{
            // Error block
+           Log.e("Error", error.getErrorMessage());
        }
    }}); 
    ```
@@ -81,9 +84,12 @@ If the result of the initial sync contains more than 100 records, the response w
    @Override
    public void onCompletion(SyncStack syncStack, Error error) {
        if (error == null){
-           // Success block
+               // Success block
+               int itemSize = syncStack.getCount();
+               String syncToken = syncStack.getSyncToken();
        }else{
          // Error block
+         Log.e("Error", error.getErrorMessage());
        }
    }});
    ```
@@ -100,8 +106,11 @@ If the result of the initial sync contains more than 100 records, the response w
     public void onCompletion(SyncStack syncStack, Error error) {
         if (error == null) {
             // Success block
+                int itemSize = syncStack.getCount();
+                String syncToken = syncStack.getSyncToken();
         }else{
             // Error block
+            Log.e("Error", error.getErrorMessage());
         }
     }});
 ```
