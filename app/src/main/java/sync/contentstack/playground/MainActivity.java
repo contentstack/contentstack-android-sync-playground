@@ -111,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
     private void showData(SyncStack syncStack){
 
         int itemSize = syncStack.getCount();
+        int items = syncStack.getItems().size();
         String syncToken = syncStack.getSyncToken();
         String message = null;
         if (syncToken!=null){
