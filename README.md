@@ -60,6 +60,7 @@ stack.sync(new SyncResultCallBack() {
        if (error == null) {
            // Success block
                int itemSize = syncStack.getCount();
+               int items = syncStack.getItems().size();
                String syncToken = syncStack.getSyncToken();
        }else{
            // Error block
@@ -86,6 +87,7 @@ If the result of the initial sync contains more than 100 records, the response w
        if (error == null){
                // Success block
                int itemSize = syncStack.getCount();
+               int items = syncStack.getItems().size();
                String syncToken = syncStack.getSyncToken();
        }else{
          // Error block
@@ -107,6 +109,7 @@ If the result of the initial sync contains more than 100 records, the response w
         if (error == null) {
             // Success block
                 int itemSize = syncStack.getCount();
+                int items = syncStack.getItems().size();
                 String syncToken = syncStack.getSyncToken();
         }else{
             // Error block
