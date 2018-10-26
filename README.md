@@ -2,8 +2,6 @@
 
 This is a demo playground app built using Contentstack’s Android SDK and Sync API. You can try out and play with our Sync API with this example app, before building bigger and better applications. 
 
-Note that this app does not store data on the device’s local storage. To create offline apps, view our other [example app that uses Persistence Library](https://github.com/contentstack/contentstack-android-persistence-example.git) with the Sync API. 
-
 Perform the steps given below to use this app.
 
 ### Prerequisites
@@ -122,8 +120,7 @@ Screenshot
    
    <img src="https://github.com/contentstack/contentstack-android-sync-playground/blob/master/app/src/main/assets/screenshot/subsquesnt.png"  height="500" width="300">
 
-This is a simple playground app that helps you understand how the Sync API works with the Android SDK. To learn how to persist data in order to create offline apps, refer to the [Android demo app built using the Persistence Library](https://github.com/contentstack/contentstack-android-persistence-example
-).
+
 
 ### More Resources
 * [Getting started with Android SDK](https://www.contentstack.com/docs/platforms/android)
