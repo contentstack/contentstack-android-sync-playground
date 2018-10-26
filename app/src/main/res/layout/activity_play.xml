@@ -29,18 +29,39 @@
                     android:textSize="15sp" />
 
 
-                <Button
-                    android:id="@+id/btnInitiate"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#DE4A48"
-                    android:onClick="onInitialClick"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
-                    android:text="@string/start"
-                    android:textColor="#FFFFFF"
-                    android:padding="@dimen/fab_margin"
-                    android:textSize="15sp" />
+                    android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnInitiate"
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="#DE4A48"
+                            android:onClick="onInitialClick"
+                            android:text="@string/start"
+                            android:textColor="#FFFFFF"
+                            android:layout_marginEnd="4dp"
+                            android:textSize="15sp" />
+
+                        <Button
+                            android:id="@+id/btnSubsequent"
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="#DE4A48"
+                            android:onClick="onSubsequentSync"
+                            android:text="@string/subsequent_sync"
+                            android:textColor="#FFFFFF"
+                            android:textSize="15sp" />
+
+                </LinearLayout>
+
+
 
 
         </RelativeLayout>

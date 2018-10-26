@@ -40,13 +40,20 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(binding.toolbar);
         stack = BaseApp.getStack();
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                subsquentsync();
-            }
-        });
+    }
+
+
+    // Click handler for Initial click
+    public void onInitialClick(View view) {
+        binding.container.tvStatus.setText("Loading...");
+        initiateSync();
+    }
+
+
+    // Click handler for Subsequent click
+    public void onSubsequentSync(View view){
+        binding.container.tvStatus.setText("Loading...");
+        subsquentsync();
     }
 
 
@@ -68,23 +75,21 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-
     /**
      * This request is made to get updated data from the stack
      */
-    private void deltaRequestWithSyncToken(String syncToken){
+    private void subsequentSync(String syncToken){
         stack.syncToken(syncToken, new SyncResultCallBack() {
             @SuppressLint("SetTextI18n")
             @Override
             public void onCompletion(SyncStack syncStack, Error error) {
 
-                if (error == null){
+                if (error == null)
+                {
                     showData(syncStack);
                 }
             }
         });
-
     }
 
 
@@ -94,8 +99,7 @@ public class MainActivity extends AppCompatActivity {
 
         String syncToken = BaseApp.getSyncToken();
         if (syncToken != null){
-            binding.container.tvStatus.setText("Loading...");
-            deltaRequestWithSyncToken(syncToken);
+            subsequentSync(syncToken);
         }else {
             binding.container.tvStatus.setText("You have not initialize sync call, initialise sync first");
         }
@@ -103,15 +107,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    // Click handler for Initial click
-    public void onInitialClick(View view) {
-        binding.container.tvStatus.setText("Loading...");
-        initiateSync();
-    }
-
-
 
     private void showData(SyncStack syncStack){
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
