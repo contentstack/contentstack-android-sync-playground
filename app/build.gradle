@@ -1,26 +1,23 @@
 apply plugin: 'com.android.application'
 
 android {
-
-    compileSdkVersion 28
+    def localProperties = new Properties()
+    localProperties.load(new FileInputStream(rootProject.file("local.properties")))
+    compileSdkVersion 30
     defaultConfig {
         applicationId "sync.contentstack.activity_playground"
         minSdkVersion 19
-        targetSdkVersion 28
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
-
         debug {
-
-            buildConfigField("String", "STACK_URL", "\"stag-cdn.contentstack.io\"")
-
-            buildConfigField("String", "API_KEY", "\"***REMOVED***\"")
-            buildConfigField("String", "DELIVERY_TOKEN", "\"***REMOVED***\"")
-            buildConfigField("String", "ENVIRONMENT", "\"web\"")
-
+            buildConfigField("String", "STACK_URL", "\"cdn.contentstack.io\"")
+            buildConfigField("String", "API_KEY", localProperties['APIKey'])
+            buildConfigField("String", "DELIVERY_TOKEN", localProperties['deliveryToken'])
+            buildConfigField("String", "ENVIRONMENT", localProperties['environment'])
             buildConfigField("String", "PLAYGROUND_SYNC_TOKEN", "\"activity_playground\"")
             buildConfigField("String", "SYNC_TOKEN_KEY", "\"token\"")
         }

@@ -1,32 +1,21 @@
 package sync.contentstack.playground;
-
 import android.annotation.SuppressLint;
-import android.os.Build;
 import android.os.Bundle;
-
+import android.view.View;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import com.contentstack.sdk.Error;
 import com.contentstack.sdk.Stack;
 import com.contentstack.sdk.SyncResultCallBack;
 import com.contentstack.sdk.SyncStack;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import sync.contentstack.playground.databinding.ActivityMainBinding;
-
-import android.os.Handler;
-import android.view.View;
 
 
 public class MainActivity extends AppCompatActivity {
-
     // Holds for seconds for clear output
-    private int WAIT_FOR_SECONDS = 2000;
-
+    private final int WAIT_FOR_SECONDS = 2000;
     // UI binding
     private ActivityMainBinding binding;
-
     // Stack instance
     private Stack stack;
 
@@ -34,14 +23,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-
         setSupportActionBar(binding.toolbar);
         stack = BaseApp.getStack();
-
     }
-
 
     // Click handler for Initial click
     public void onInitialClick(View view) {
@@ -49,24 +34,20 @@ public class MainActivity extends AppCompatActivity {
         initiateSync();
     }
 
-
     // Click handler for Subsequent click
     public void onSubsequentSync(View view){
         binding.container.tvStatus.setText("Loading...");
         subsquentsync();
     }
 
-
-
-    /* It initialise very first time for full sync of the
-        data in the application from the stack */
-
+    /*
+    It initialise very first time for full sync of the
+    data in the application from the stack */
     private void initiateSync(){
         stack.sync(new SyncResultCallBack() {
             @Override
             public void onCompletion(SyncStack syncStack, Error error) {
-                if (error == null)
-                {
+                if (error == null) {
                     showData(syncStack);
                 }
             }
@@ -83,9 +64,7 @@ public class MainActivity extends AppCompatActivity {
             @SuppressLint("SetTextI18n")
             @Override
             public void onCompletion(SyncStack syncStack, Error error) {
-
-                if (error == null)
-                {
+                if (error == null) {
                     showData(syncStack);
                 }
             }
@@ -95,8 +74,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     // Click Handler for Delta Button
+    @SuppressLint("SetTextI18n")
     public void subsquentsync() {
-
         String syncToken = BaseApp.getSyncToken();
         if (syncToken != null){
             subsequentSync(syncToken);
@@ -108,8 +87,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    @SuppressLint("SetTextI18n")
     private void showData(SyncStack syncStack){
-
         int itemSize = syncStack.getCount();
         int items = syncStack.getItems().size();
         String syncToken = syncStack.getSyncToken();
