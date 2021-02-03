@@ -1,4 +1,4 @@
-## Build a playground app using Sync API with Contentstack’s Android SDK
+# Build a playground app using Sync API with Contentstack’s Android SDK
 
 This is a demo playground app built using Contentstack’s Android SDK and Sync API. You can try out and play with our Sync API with this example app, before building bigger and better applications. 
 
@@ -42,7 +42,7 @@ $ git clone [https://github.com/contentstack/contentstack-android-sync-playgroun
 
 Now add your Contentstack API Key, Delivery Token, and Environment to the project during the SDK initialization step. (Find your [Stack's API Key and Delivery Token](https://www.contentstack.com/docs/apis/content-delivery-api/#authentication).)
 
-```
+```java
 Stack stack = Contentstack.stack(context, “api_key”, “delivery_token”, “environment”); 
 ```
 
@@ -51,15 +51,15 @@ This will initiate your project.
 ### Step 7: Initialize sync
 To perform initial sync, use the sync method, which fetches all the content of the specified environment. 
 
-```
+```java
 stack.sync(new SyncResultCallBack() {
    @Override
    public void onCompletion(SyncStack syncStack, Error error) {
        if (error == null) {
            // Success block
-               int itemSize = syncStack.getCount();
-               int items = syncStack.getItems().size();
-               String syncToken = syncStack.getSyncToken();
+           int itemSize = syncStack.getCount();
+            int items = syncStack.getItems().size();
+            String syncToken = syncStack.getSyncToken();
        }else{
            // Error block
            Log.e("Error", error.getErrorMessage());
@@ -76,17 +76,17 @@ stack.sync(new SyncResultCallBack() {
    
 If the result of the initial sync contains more than 100 records, the response would be paginated. In that case, it returns a pagination token. While the SDK continues to automatically fetch the next batch of data using the pagination token, it comes in handy in case the sync process is interrupted midway (due to network issues, etc.). You can use it to reinitiate sync from where it was interrupted.
    
-   ```
+   ```java
    // Call this function when initial sync is interrupted while 
    // paginating and you receive the Pagination Token
    stack.syncWithPaginationToken("blt3f33333d333333fba333e3", new SyncResultCallBack() {
    @Override
    public void onCompletion(SyncStack syncStack, Error error) {
        if (error == null){
-               // Success block
-               int itemSize = syncStack.getCount();
-               int items = syncStack.getItems().size();
-               String syncToken = syncStack.getSyncToken();
+          // Success block
+          int itemSize = syncStack.getCount();
+          int items = syncStack.getItems().size();
+          String syncToken = syncStack.getSyncToken();
        }else{
          // Error block
          Log.e("Error", error.getErrorMessage());
@@ -99,16 +99,16 @@ If the result of the initial sync contains more than 100 records, the response w
    
    ### Step 10: Perform subsequent sync
    In the response of the initial sync, you get a sync token in the response. This token is used to fetch incremental updates, i.e., only the changes made after the initial sync. Use the syncToken method to perform subsequent syncs. 
-   ```
+   ```java
    // Dummy token blt3d033333333a3daa333c3
    stack.syncToken("blt3d033333333a3daa333c3", new SyncResultCallBack() {
     @Override
     public void onCompletion(SyncStack syncStack, Error error) {
         if (error == null) {
             // Success block
-                int itemSize = syncStack.getCount();
-                int items = syncStack.getItems().size();
-                String syncToken = syncStack.getSyncToken();
+             int itemSize = syncStack.getCount();
+             int items = syncStack.getItems().size();
+             String syncToken = syncStack.getSyncToken();
         }else{
             // Error block
             Log.e("Error", error.getErrorMessage());
@@ -119,7 +119,6 @@ If the result of the initial sync contains more than 100 records, the response w
 Screenshot
    
    <img src="https://github.com/contentstack/contentstack-android-sync-playground/blob/master/app/src/main/assets/screenshot/subsquesnt.png"  height="500" width="300">
-
 
 
 ### More Resources
